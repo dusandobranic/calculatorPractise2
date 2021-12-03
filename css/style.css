@@ -1,0 +1,78 @@
+* *::before, *::after {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #00aaff, #00ff6c);
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid .del {
+  background-color: red;
+}
+
+.calculator-grid .all-clear {
+  background-color: salmon;
+}
+
+.calculator-grid .equals {
+  background-color: royalblue;
+}
+
+.calculator-grid .operations {
+  background-color: lightblue;
+  color: black;
+}
+
+.calculator-grid .span-two {
+  grid-column: span 2;
+}
+
+.calculator-grid button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid #fff;
+  outline: none;
+  background-color: #333;
+  opacity: 0.9;
+  color: #fff;
+}
+
+.calculator-grid button:hover {
+  opacity: 0.7;
+}
+
+.calculator-grid .output {
+  grid-column: 1/ -1;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.calculator-grid .output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.calculator-grid .output .current-operand {
+  color: #fff;
+  font-size: 2.5rem;
+}
